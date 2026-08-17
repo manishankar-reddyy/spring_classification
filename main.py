@@ -20,23 +20,11 @@ WIRE_PROBE_WIDTH = 5
 MIN_WIRE_RUN_PX = 5
 MAX_WIRE_RUN_RATIO = 0.24
 WIRE_ROW_FILL_THRESHOLD = 0.6
-WIRE_SIDE_RANGES = {
-    "left": (0.35, 0.62),
-    "right": (0.68, 0.86),
-}
-WIRE_CONTOUR_SIDE_RANGES = {
-    "left": (0.02, 0.38),
-    "right": (0.62, 0.98),
-}
+WIRE_SIDE_RANGES = {"left": (0.35, 0.62),"right": (0.68, 0.86),}
+WIRE_CONTOUR_SIDE_RANGES = {"left": (0.02, 0.38),"right": (0.62, 0.98),}
 WIRE_WINDING_SEARCH_Y_RANGE = (0.22, 0.70)
-WIRE_TARGET_Y_RATIO_BY_SIDE = {
-    "right": 0.36,
-    "left": 0.58,
-}
-WIRE_TARGET_HEIGHT_PERCENTILE_BY_SIDE = {
-    "right": 75,
-    "left": 55,
-}
+WIRE_TARGET_Y_RATIO_BY_SIDE = {"right": 0.36,"left": 0.58,}
+WIRE_TARGET_HEIGHT_PERCENTILE_BY_SIDE = {"right": 75,"left": 55,}
 MIN_REASONABLE_WD_MM = 8.0
 
 COLOUR_RULES = [
@@ -254,7 +242,7 @@ def classify_colour(mask: np.ndarray, image_bgr: np.ndarray) -> tuple[str, dict 
     mean_v = float(np.median(clean[:, 2]))
     sat_q75 = float(np.percentile(clean[:, 1], 75))
     high_sat_ratio = float(np.mean(clean[:, 1] >= 70))
-
+                    
     family = "Unknown"
     rule_name = "none"
 
